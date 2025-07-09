@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/4c9fe971-3265-48b9-8d4e-210c74e5f7aa)
+![image](https://github.com/user-attachments/assets/6bbd7b71-22b8-4a4e-9189-7fcfd0463f00)
+
 
 Craft job-winning resumes with expertly designed templates. ResumeXpert helps you create ATS-friendly, recruiter-approved resumes tailored to your career goals—in just minutes!
 
