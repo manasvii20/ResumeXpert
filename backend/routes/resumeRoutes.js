@@ -12,5 +12,5 @@ resumeRouter.put('/:id/upload-images',protect,uploadResumeImages)
 
 resumeRouter.delete('/:id',protect,deleteResume)
 
-export default resumeRouter
+export default resumeRouter;
 
