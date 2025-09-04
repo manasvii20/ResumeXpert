@@ -1,6 +1,6 @@
 import axios from 'axios'
-import {BASE_URL} from '/apiPaths'
-import { response } from 'express'
+import { BASE_URL } from '../utils/apiPaths'
+// import { response } from 'express'
 
 const axiosInstance=axios.create({
     baseURL:BASE_URL,
