@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import{validateEmail} from '../utils/helper'
 import axiosInstance from '../utils/axiosInstance'
 import { API_PATHS } from '../utils/apiPaths'
+import { Input } from './Input';
 
 const SignUp=({setCurrentPage})=>{
     
@@ -62,12 +63,12 @@ const SignUp=({setCurrentPage})=>{
                     placeholder='John Doe'
                     type='text'/>
 
-                <Input value={email} onChange={({target})=> setFullName(target.value)}
+                <Input value={email} onChange={({target})=> setEmail(target.value)}
                     label='Email'
                     placeholder='email@example.com'
                     type='email'/>
 
-                <Input value={fullName} onChange={({target})=> setFullName(target.value)}
+                <Input value={password} onChange={({target})=> setPassword(target.value)}
                     label='Password'
                     placeholder='Min 8 characters'
                     type='password'/>
