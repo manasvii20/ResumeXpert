@@ -5,12 +5,15 @@ import {TitleInput } from './Input'
 import { useNavigate, useParams } from "react-router-dom"
 import axiosInstance from "../utils/axiosInstance"
 import { API_PATHS } from "../utils/apiPaths"
-import { AlertCircle, ArrowLeft, Download, Loader2, Palette, Save, Trash, Trash2 } from "lucide-react"
+import { AlertCircle, ArrowLeft, Check, Download, Loader2, Palette, Save, Trash, Trash2 } from "lucide-react"
 import toast from 'react-hot-toast'
 import { fixTailwindColors } from "../utils/colors"
 
 import html2pdf from 'html2pdf.js'
 import StepProgress from "./StepProgress"
+import RenderResume from "./RenderResume"
+import Modal from "./Modal"
+import ThemeSelector from "./ThemeSelector"
 import { AdditionalInfoForm, CertificationInfoForm, ContactInfoForm, EducationDetailsForm, ProfileInfoForm, ProjectDetailForm, SkillsInfoForm, WorkExperienceForm } from "./Form"
 
 // RESIZE OBSERVER HOOK
@@ -711,11 +714,76 @@ const EditResume=()=>{
                     </div>
                 </div>
 
-                
+                <div className="preview-container relative" ref={previewContainerRef}>
+                    <div className={containerStyles.previewInner}>
+                        <RenderResume key ={`preview-${resumeData?.template?.theme}`}
+                            templateId={resumeData?.template?.theme || ""}
+                            resumeData={resumeData}
+                            containerWidth={previewWidth}
+                        />
+                    </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* MODEAL DATA HERE */}
+      <Modal isOpen={openThemeSelector} onClose={()=>setOpenThemeSelector(false)}
+      title="Change Title">
+        <div className={containerStyles.modalContent}>
+            <ThemeSelector selectedTheme={resumeData?.template.theme}
+                setSelectedTheme={updateTheme} onClose={()=> setOpenThemeSelector(false)}
+            />
+        </div>
+      </Modal>
+
+      <Modal isOpen={openPreviewModal} onClose={()=> setOpenPreviewModal(false)}
+        title={resumeData.title}
+        showActionBtn
+        actionBtnText={isDownloading ? "Generating..."
+            : downloadSuccess ? "Downloaded" : "Download PDF"}   
+        actionBtnIcon={
+            isDownloading ?(
+                <Loader2 size={16} className="animate-spin"/>
+            ) :
+                downloadSuccess ? (
+                    <Check size={16} className="text-white"/>
+                ): (
+                    <Download size={16}/>
+                )
+        }  
+        onActionClick={downloadPDF}
+        >
+            <div className="relative">
+                <div className={statusStyles.modalBadge}>
+                    <div className={iconStyles.pulseDot}></div>
+                    <span>Completion: {completionPercentage}%</span>
+                </div>
+            </div>
+
+            <div className={containerStyles.pdfPreview}>
+                <div ref={resumeDownloadRef} className="a4-wrapper">
+                    <div className="w-full h-full">
+                        <RenderResume key= {`pdf-${resumeData?.template?.theme}`}
+                            templateId={resumeData?.template?.theme ||""}
+                            resumeData={resumeData}
+                            containerWidth={null}
+                        />
+                    </div>
+                </div>
+            </div>
+       </Modal>
+
+       {/* NOW THUMNAIL ERROR FIX */}
+       <div style={{display:"none"}} ref={thumbnailRef}>
+            <div className={containerStyles.hiddenThumbnail}>
+                <RenderResume key={`thumb-${resumeData?.template?.theme}`}
+                    templateId={resumeData?.template?.theme || ""}
+                    resumeData={resumeData}
+                />
+            </div>
+       </div>
     </DashboardLayout>
   );
 };

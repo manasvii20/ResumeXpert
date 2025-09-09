@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {DUMMY_RESUME_DATA, resumeTemplates} from '../utils/data'
 import Tabs from './Tabs'
 import { Check } from 'lucide-react'
@@ -21,7 +21,7 @@ const ThemeSelector=({selectedTheme,setSelectedTheme,resumeData,onClose})=>{
 
     const handleThemeSelector=()=>{
         setSelectedTheme(selectedTemplate.theme)
-        onclose()
+        onClose()
     }
 
     const updateBaseWidth=()=>{
@@ -29,13 +29,21 @@ const ThemeSelector=({selectedTheme,setSelectedTheme,resumeData,onClose})=>{
             setBaseWidth(resumeRef.current.offsetWidth)
         }
     }
+
+    useEffect(()=>{
+        updateBaseWidth()
+        window.addEventListener("resize",updateBaseWidth)
+        return()=>{
+            window.removeEventListener("resize", updateBaseWidth)
+        }
+    },[])
     return (
         <div className='max-w-7xl mx-auto px-4'>
             {/* header */}
             <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8
             p-4 sm:p-6 bg-gradient-to-r from-white to-violet-50 rounded-2xl border border-violet-100'>
 
-                <Tabs tabs={TAB_DATA} activeTab={tabValue} setActiveTab={setActiveTab}/>
+                <Tabs tabs={TAB_DATA} activeTab={tabValue} setActiveTab={setTabValue}/>
 
                 <button className='w-full sm:w-auto flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r 
                 from-violet-600 to-fuchsia-600 text-white font-black rounded-2xl hover:scale-105 

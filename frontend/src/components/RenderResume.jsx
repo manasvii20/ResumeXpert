@@ -5,28 +5,30 @@ import TemplateThree from'./TemplateThree'
 
 const RenderResume=({
     templateId,
-    resumeDate,
+    resumeData,
     containerWidth,
 })=>{
+
+    
     switch(templateId){
         case "01":
             return(
-                <TemplateOne resumeData={resumeDate} containerWidth={containerWidth}/>
+                <TemplateOne resumeData={resumeData} containerWidth={containerWidth}/>
             )
         
         case "02":
             return(
-                <TemplateTwo resumeData={resumeDate} containerWidth={containerWidth}/>
+                <TemplateTwo resumeData={resumeData} containerWidth={containerWidth}/>
             )
 
         case "03":
             return(
-                <TemplateThree resumeData={resumeDate} containerWidth={containerWidth}/>
+                <TemplateThree resumeData={resumeData} containerWidth={containerWidth}/>
             )
 
         default:
             return(
-                <TemplateOne resumeData={resumeDate} containerWidth={containerWidth}/>
+                <TemplateOne resumeData={resumeData} containerWidth={containerWidth}/>
             )
     }
 }
