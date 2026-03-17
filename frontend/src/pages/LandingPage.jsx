@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { landingPageStyles } from '../assets/dummystyle'
-import { LayoutTemplate, X, Menu, ArrowRight, Zap, Download } from 'lucide-react'
+import { LayoutTemplate, X, Menu, ArrowRight, Zap, Download, Sparkles } from 'lucide-react'
 import { UserContext } from '../context/UserContext'
 import { ProfileInfoCard } from '../components/Cards'
 import Modal from '../components/Modal'
@@ -22,6 +22,10 @@ const LandingPage = () => {
     } else {
       navigate('/dashboard')
     }
+  }
+
+  const handleAnalyzeCTA = () => {
+    navigate('/analyze')
   }
 
   return (
@@ -117,6 +121,14 @@ const LandingPage = () => {
                 <button className={landingPageStyles.secondaryButton} onClick={handleCTA}>
                   View Templates
                 </button>
+
+                <button
+                  className="relative px-5 py-2.5 rounded-xl font-medium text-sm border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 transition-all flex items-center gap-2"
+                  onClick={handleAnalyzeCTA}
+                >
+                  <Sparkles size={16} />
+                  Analyze with AI
+                </button>
               </div>
             </div>
 
@@ -206,6 +218,13 @@ const LandingPage = () => {
                 description: "Download high-quality PDFs instantly with perfect formatting",
                 gradient: landingPageStyles.featureIconOrange,
                 bg: landingPageStyles.featureCardOrange
+              },
+              {
+                icon: <Sparkles className={landingPageStyles.featureIcon} />,
+                title: "AI Resume Analyzer",
+                description: "Get AI-powered ATS scoring, keyword analysis, and smart improvement suggestions",
+                gradient: landingPageStyles.featureIconViolet,
+                bg: landingPageStyles.featureCardViolet
               }
             ].map((feature, index) => (
               <div key={index} className={landingPageStyles.featureCard}>
@@ -226,46 +245,46 @@ const LandingPage = () => {
 
         {/* CTA SECTION */}
         <section className={landingPageStyles.ctaSection}>
-            <div className={landingPageStyles.ctaContainer}>
-                <div className={landingPageStyles.ctaCard}>
-                <div className={landingPageStyles.ctaCardBg}></div>
-                <div className={landingPageStyles.ctaCardContent}>
-                    <h2 className={landingPageStyles.ctaTitle}>
-                    Ready to Build Your <span className={landingPageStyles.ctaTitleGradient}>
-                        Standout Resume?
-                    </span>
-                    </h2>
-                    <p className={landingPageStyles.ctaDescription}>
-                        Join thousands of professionals who landed their dream jobs.
-                    </p>
-                    <button className={landingPageStyles.ctaButton} onClick={handleCTA}>
-                        <div className={landingPageStyles.ctaButtonOverlay}></div>
-                        <span className={landingPageStyles.ctaButtonText}>Start Building Now</span>
-                    </button>
-                </div>
-                </div>
+          <div className={landingPageStyles.ctaContainer}>
+            <div className={landingPageStyles.ctaCard}>
+              <div className={landingPageStyles.ctaCardBg}></div>
+              <div className={landingPageStyles.ctaCardContent}>
+                <h2 className={landingPageStyles.ctaTitle}>
+                  Ready to Build Your <span className={landingPageStyles.ctaTitleGradient}>
+                    Standout Resume?
+                  </span>
+                </h2>
+                <p className={landingPageStyles.ctaDescription}>
+                  Join thousands of professionals who landed their dream jobs.
+                </p>
+                <button className={landingPageStyles.ctaButton} onClick={handleCTA}>
+                  <div className={landingPageStyles.ctaButtonOverlay}></div>
+                  <span className={landingPageStyles.ctaButtonText}>Start Building Now</span>
+                </button>
+              </div>
             </div>
+          </div>
         </section>
 
         {/* FOOTER SECTION */}
 
         <footer className={landingPageStyles.footer}>
-            <div className={landingPageStyles.footerContainer}>
-                <p className={landingPageStyles.footerText}>
-                    Created with  <span className={landingPageStyles.footerHeart}>❤️</span>
-                </p>
-            </div>
+          <div className={landingPageStyles.footerContainer}>
+            <p className={landingPageStyles.footerText}>
+              Created with  <span className={landingPageStyles.footerHeart}>❤️</span>
+            </p>
+          </div>
         </footer>
 
         {/* MODAL FOR LOGIN AND SIGNUP */}
-        <Modal isOpen={openAuthModal} onClose={()=>{
-            setOpenAuthModal(false)
-            setCurrentPage("login")
+        <Modal isOpen={openAuthModal} onClose={() => {
+          setOpenAuthModal(false)
+          setCurrentPage("login")
         }} hideHeader>
-            <div>
-                {currentPage==="login" && <Login setCurrentPage={setCurrentPage}/>}
-                {currentPage==="signup" && <SignUp setCurrentPage={setCurrentPage}/>}
-            </div>
+          <div>
+            {currentPage === "login" && <Login setCurrentPage={setCurrentPage} />}
+            {currentPage === "signup" && <SignUp setCurrentPage={setCurrentPage} />}
+          </div>
         </Modal>
 
 
