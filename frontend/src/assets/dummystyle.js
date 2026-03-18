@@ -32,12 +32,12 @@ export const landingPageStyles = {
 
   // Hero section
   heroSection: "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20",
-  heroGrid: "flex flex-wrap justify-between gap-10 lg:gap-12 items-center",
-  heroLeft: "space-y-8",
+  heroGrid: "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center",
+  heroLeft: "space-y-8 lg:pr-8",
   tagline: "inline-flex items-center gap-2 sm:gap-3 px-4 py-2 bg-gradient-to-r from-violet-100 to-fuchsia-100 border border-violet-200 text-violet-700 rounded-full font-bold text-xs sm:text-sm",
-  heading: "text-4xl sm:text-6xl lg:text-8xl font-black leading-tight",
+  heading: "text-4xl sm:text-6xl lg:text-7xl font-black leading-tight",
   headingText: "block text-slate-900",
-  headingGradient: "block bg-gradient-to-r from-violet-600 via-fuchsia-600 to-orange-500 bg-clip-text text-transparent",
+  headingGradient: "block bg-gradient-to-r from-violet-600 via-fuchsia-600 to-orange-500 bg-clip-text text-transparent pr-2",
   description: "text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed max-w-lg font-medium",
   ctaButtons: "flex flex-col sm:flex-row gap-4",
 
@@ -55,7 +55,7 @@ export const landingPageStyles = {
   statLabel: "text-xs sm:text-sm text-slate-500 font-medium",
 
   // Hero illustration
-  heroIllustration: "relative w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto",
+  heroIllustration: "relative w-full max-w-lg lg:ml-auto",
   heroIllustrationBg: "absolute -inset-8 bg-gradient-to-r from-violet-200/50 to-fuchsia-200/50 rounded-3xl blur-3xl",
   heroIllustrationContainer: "relative",
 
