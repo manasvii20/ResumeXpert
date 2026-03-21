@@ -33,10 +33,10 @@ app.use(
     express.static(path.join(__dirname, 'uploads'), {
         setHeaders: (res, _path) => {
             const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
-            res.set('Access-Control-Allow-Origin', frontendUrl)
+            res.set('Access-Control-Allow-Origin', frontendUrl);
         }
     })
-)
+);
 app.get('/', (req, res) => {
     res.send('API WORKING')
 })
