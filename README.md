@@ -5,8 +5,7 @@ ResumeXpert is an **AI-powered resume builder and analyzer** that helps users cr
 ---
 ## 🌐 Live Demo
 
-🔗 **Frontend:** https://resumexpert-frontend-3ghm.onrender.com/  
-🔗 **Backend API:** https://resumexpert-backend-77h7.onrender.com/
+🔗 https://resumexpert-frontend-3ghm.onrender.com/
 
 ---
 
