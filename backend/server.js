@@ -32,7 +32,8 @@ app.use(
     '/uploads',
     express.static(path.join(__dirname, 'uploads'), {
         setHeaders: (res, _path) => {
-            res.set('Access-Control-Allow-Origin', 'https://resumexpert-frontend-3ghm.onrender.com')
+            const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
+            res.set('Access-Control-Allow-Origin', frontendUrl)
         }
     })
 )
