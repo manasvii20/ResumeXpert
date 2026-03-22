@@ -28,6 +28,7 @@ app.use('/api/auth', userRoutes)
 app.use('/api/resume', resumeRoutes)
 app.use('/api/ai', aiRoutes)
 
+
 app.use(
     '/uploads',
     express.static(path.join(__dirname, 'uploads'), {
