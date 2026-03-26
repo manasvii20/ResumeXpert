@@ -1,29 +1,29 @@
-# 🚀 ResumeXpert – AI Resume Builder & ATS Optimizer
+# ResumeXpert – AI Resume Builder & ATS Optimizer
 
 ResumeXpert is an **AI-powered resume builder and analyzer** that helps users create, optimize, and evaluate resumes for **ATS (Applicant Tracking Systems)** and recruiter screening.
 
 ---
-## 🌐 Live Demo
+## Live Demo
 
-🔗 https://resumexpert-frontend-3ghm.onrender.com/
+https://resumexpert-frontend-3ghm.onrender.com/
 
 ---
 
-## ✨ Features
+## Features
 
-* 📝 **AI Resume Builder**
+* **AI Resume Builder**
   Create professional resumes using customizable templates with real-time preview.
 
-* 🤖 **AI Resume Analysis (ATS Optimizer)**
+* **AI Resume Analysis (ATS Optimizer)**
   Get ATS score, keyword suggestions, and actionable feedback.
 
-* 🎯 **Job Description Matcher**
+* **Job Description Matcher**
   Compare resume with job description and get a **match score** with missing keywords.
 
-* ✍️ **Bullet Point Rewriter**
+* **Bullet Point Rewriter**
   Improve weak resume bullet points using AI with strong action verbs and measurable impact.
 
-* 📊 **Resume Quality Dashboard**
+* **Resume Quality Dashboard**
   Visual analysis including:
 
   * ATS Score
@@ -32,12 +32,12 @@ ResumeXpert is an **AI-powered resume builder and analyzer** that helps users cr
   * Bullet Strength
   * Formatting Score
 
-* 📄 **PDF Export**
+* **PDF Export**
   Download optimized resumes instantly.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend:** React.js, Tailwind CSS
 **Backend:** Node.js, Express.js
@@ -46,7 +46,7 @@ ResumeXpert is an **AI-powered resume builder and analyzer** that helps users cr
 
 ---
 
-## 🧠 AI Capabilities
+## AI Capabilities
 
 * ATS Score Calculation
 * Resume–Job Match Analysis
@@ -57,30 +57,30 @@ ResumeXpert is an **AI-powered resume builder and analyzer** that helps users cr
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-### 🔹 Landing Page
+### Landing Page
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d0a030ee-8d68-4552-98f1-ff327ff3a321" width="700"/>
 </p>
 
 ---
 
-### 🔹 Resume Builder
+### Resume Builder
 <p align="center">
   <img src="https://github.com/user-attachments/assets/2a90b1a0-cdb7-4220-b5be-97f6f7f9a707" width="700"/>
 </p>
 
 ---
 
-### 🔹 AI Resume Analysis
+### AI Resume Analysis
 <p align="center">
   <img src="https://github.com/user-attachments/assets/7a315c0c-e7a8-4c9b-b406-5ed939067cea" width="700"/>
 </p>
 
 ---
 
-### 🔹 ATS Score & Dashboard
+### ATS Score & Dashboard
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0380a531-9aaf-4fdd-8702-7cc43018dff0" width="300"/>
   <img src="https://github.com/user-attachments/assets/a63f250d-283e-4859-ae3f-61475b0e8a7b" width="300"/>
@@ -89,7 +89,7 @@ ResumeXpert is an **AI-powered resume builder and analyzer** that helps users cr
 
 ---
 
-### 🔹 Bullet Point Rewriter
+### Bullet Point Rewriter
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5119845a-ee93-42e4-ad39-987c7709c57f" width="350"/>
   &nbsp;&nbsp;&nbsp;
@@ -97,16 +97,16 @@ ResumeXpert is an **AI-powered resume builder and analyzer** that helps users cr
 </p>
 
 ---
-## ⚙️ Setup Instructions
+## Setup Instructions
 
-### 1️⃣ Clone the repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/manasvii20/ResumeXpert.git
 cd ResumeXpert
 ```
 
-### 2️⃣ Setup Backend
+### Setup Backend
 
 ```bash
 cd backend
@@ -127,7 +127,7 @@ npm start
 
 ---
 
-### 3️⃣ Setup Frontend
+### Setup Frontend
 
 ```bash
 cd frontend
@@ -137,7 +137,7 @@ npm run dev
 
 ---
 
-### 4️⃣ Open the App
+### Open the App
 
 ```
 http://localhost:5173
@@ -145,7 +145,7 @@ http://localhost:5173
 
 ---
 
-## 🧪 How to Use
+## How to Use
 
 1. Choose **Create Resume** or **Analyze Resume**
 2. Upload resume or paste text
@@ -161,7 +161,7 @@ http://localhost:5173
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 ResumeXpert/
@@ -182,7 +182,7 @@ ResumeXpert/
 
 ---
 
-## 🔒 Security
+## Security
 
 * API keys are stored in `.env`
 * `.env` is ignored via `.gitignore`
@@ -190,7 +190,7 @@ ResumeXpert/
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 * Resume version comparison
 * AI resume chatbot
